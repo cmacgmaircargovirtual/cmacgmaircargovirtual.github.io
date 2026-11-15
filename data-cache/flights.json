@@ -46,6 +46,29 @@
    "emergency": false,
    "closed": true,
    "deleted": false
+  },
+  "9f580009d392": {
+   "id": "9f580009d392",
+   "flightNumber": "CMA572",
+   "dep": "LTAC",
+   "arr": "LFPG",
+   "pilotKey": "72358539ce86",
+   "pilot": "Athan C.",
+   "aircraft": "B77L",
+   "date": "2026-11-15T21:29:25.048Z",
+   "blockMin": 224,
+   "rating": 9.53,
+   "cargoKg": 47,
+   "network": {
+    "name": "vatsim",
+    "pings": 261,
+    "pingsTotal": 261,
+    "ratio": 1,
+    "lastPing": "2026-11-15T21:28:27.408Z"
+   },
+   "emergency": false,
+   "closed": true,
+   "deleted": false
   }
  }
 }

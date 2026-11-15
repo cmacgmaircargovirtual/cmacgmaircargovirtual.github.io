@@ -1,0 +1,51 @@
+{
+ "backfilledFrom": "2026-11-01",
+ "flights": {
+  "01a18053dd04": {
+   "id": "01a18053dd04",
+   "flightNumber": "CMA571",
+   "dep": "VHHH",
+   "arr": "LTAC",
+   "pilotKey": "72358539ce86",
+   "pilot": "Athan C.",
+   "aircraft": "B77L",
+   "date": "2026-11-15T13:31:03.762Z",
+   "blockMin": 681,
+   "rating": 10,
+   "cargoKg": 478,
+   "network": {
+    "name": "vatsim",
+    "pings": 711,
+    "pingsTotal": 711,
+    "ratio": 1,
+    "lastPing": "2026-11-15T13:30:06.725Z"
+   },
+   "emergency": false,
+   "closed": true,
+   "deleted": false
+  },
+  "b8e0a4527d3c": {
+   "id": "b8e0a4527d3c",
+   "flightNumber": "CMA572",
+   "dep": "LFPG",
+   "arr": "VHHH",
+   "pilotKey": "72358539ce86",
+   "pilot": "Athan C.",
+   "aircraft": "B77L",
+   "date": "2026-11-11T15:10:29.395Z",
+   "blockMin": 715,
+   "rating": 9.28,
+   "cargoKg": 515,
+   "network": {
+    "name": "vatsim",
+    "pings": 362,
+    "pingsTotal": 738,
+    "ratio": 0.4905149051490515,
+    "lastPing": "2026-11-11T15:10:02.374Z"
+   },
+   "emergency": false,
+   "closed": true,
+   "deleted": false
+  }
+ }
+}

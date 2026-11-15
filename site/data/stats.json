@@ -1,9 +1,56 @@
 {
-  "generatedAt": null,
-  "status": "pending",
-  "totals": { "flights": 0, "blockMinutes": 0, "pilots": 0, "cargoKg": 0, "avgRating": null },
-  "last30": { "flights": 0, "blockMinutes": 0 },
-  "recent": [],
-  "topPilots": [],
-  "topRoutes": []
+  "generatedAt": "2026-11-15T20:06:25.495Z",
+  "status": "ok",
+  "totals": {
+    "flights": 2,
+    "blockMinutes": 1396,
+    "pilots": 1,
+    "cargoKg": 993,
+    "avgRating": 9.6
+  },
+  "last30": {
+    "flights": 2,
+    "blockMinutes": 1396
+  },
+  "recent": [
+    {
+      "flightNumber": "CMA571",
+      "dep": "VHHH",
+      "arr": "LTAC",
+      "pilot": "Athan C.",
+      "aircraft": "B77L",
+      "blockMin": 681,
+      "rating": 10,
+      "date": "2026-11-15T13:31:03.762Z"
+    },
+    {
+      "flightNumber": "CMA572",
+      "dep": "LFPG",
+      "arr": "VHHH",
+      "pilot": "Athan C.",
+      "aircraft": "B77L",
+      "blockMin": 715,
+      "rating": 9.28,
+      "date": "2026-11-11T15:10:29.395Z"
+    }
+  ],
+  "topPilots": [
+    {
+      "name": "Athan C.",
+      "flights": 2,
+      "blockMinutes": 1396
+    }
+  ],
+  "topRoutes": [
+    {
+      "dep": "VHHH",
+      "arr": "LTAC",
+      "flights": 1
+    },
+    {
+      "dep": "LFPG",
+      "arr": "VHHH",
+      "flights": 1
+    }
+  ]
 }

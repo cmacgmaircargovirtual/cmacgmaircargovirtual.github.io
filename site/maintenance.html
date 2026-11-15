@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    Maintenance / "coming soon" page.
+    Published in place of index.html when the GitHub variable MAINTENANCE_MODE is "on" (see README).
+    Self-contained on purpose: it only reuses the images and config.js of the main site.
+  -->
+  <title>CMA CGM Air Cargo Virtual — Coming soon</title>
+  <meta name="description" content="CMA CGM Air Cargo Virtual, a free 777F and A330 freighter virtual airline on Newsky flying the CMA CGM AIR CARGO network from Paris-Charles de Gaulle, is getting ready for departure. The website opens soon.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://cmacgmaircargovirtual.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cmacgmaircargovirtual.com/">
+  <meta property="og:site_name" content="CMA CGM Air Cargo Virtual">
+  <meta property="og:title" content="CMA CGM Air Cargo Virtual — Preparing for departure">
+  <meta property="og:description" content="The CMA CGM AIR CARGO freighter network, flown in the 777F and A330-200P2F and tracked on Newsky. Opening soon.">
+  <meta property="og:image" content="https://cmacgmaircargovirtual.com/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://cmacgmaircargovirtual.com/assets/img/og-image.jpg">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #000;
+      --text-2: #a1a1a6;
+      --text-3: #6e6e73;
+      --line: rgba(255,255,255,.1);
+      --blue: #2563ff;
+      --red: #ff1f2d;
+      --liseret: linear-gradient(90deg, var(--blue) 0 33.34%, #fff 33.34% 66.67%, var(--red) 66.67% 100%);
+      --font-display: "Geist", system-ui, sans-serif;
+      --font-body: "Geist", system-ui, sans-serif;
+      --mono: "Geist Mono", ui-monospace, Menlo, Consolas, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html, body { margin: 0; }
+    body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.6;
+      color: #fff;
+      background: var(--black);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    :focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+    .wrap { width: min(1200px, 100% - 3rem); margin-inline: auto; }
+
+    .page { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
+
+    .top { padding: 1.6rem 0; }
+    .top img { height: 30px; width: auto; }
+
+    .content { padding: clamp(2.5rem, 7vw, 5.5rem) 0 clamp(2rem, 4vw, 3rem); display: grid; grid-template-columns: 1.25fr 1fr; gap: 2rem 4rem; align-items: end; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .7rem; margin: 0 0 1.4rem;
+      padding: .45rem .9rem; border-radius: 999px; border: 1px solid rgba(255,255,255,.14);
+      font-family: var(--mono); font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .14em; color: #e4e4e8;
+    }
+    .eyebrow::before { content: ""; flex: none; width: 18px; height: 2px; background: var(--liseret); }
+    h1 {
+      margin: 0; max-width: 10ch;
+      font-family: var(--font-display); font-weight: 600; line-height: .94; letter-spacing: -.055em;
+      font-size: clamp(2.9rem, 7.4vw, 7rem);
+    }
+    h1 span {
+      background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,.38) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .lead { margin: 0; max-width: 46ch; font-size: 1.06rem; color: var(--text-2); }
+
+    .cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-weight: 500; font-size: 1rem;
+      padding: 1rem 1.5rem; border-radius: 14px; text-decoration: none;
+      background: #fff; color: #000; transition: background-color .15s ease;
+    }
+    .btn:hover { background: #dcdce0; }
+
+    .media { margin: 0; position: relative; flex: 1; min-height: 280px; }
+    .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+    .media::before {
+      content: ""; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(180deg, var(--black) 0%, rgba(0,0,0,.5) 18%, rgba(0,0,0,0) 45%);
+    }
+    .credit {
+      position: absolute; right: .9rem; bottom: .7rem; z-index: 2;
+      font-size: .7rem; color: rgba(255,255,255,.75); text-shadow: 0 1px 3px rgba(0,0,0,.8);
+    }
+    .liseret { display: block; height: 2px; background: var(--liseret); }
+
+    .board { display: grid; grid-template-columns: repeat(4, 1fr); margin-block: 0; }
+    .board div { padding: 1.2rem 0 1.3rem; }
+    .board div + div { padding-left: 1.5rem; border-left: 1px solid var(--line); }
+    .board dt { font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .14em; color: var(--text-2); }
+    .board dd { margin: .25rem 0 0; font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; line-height: 1.2; letter-spacing: -.03em; }
+    .status { display: inline-flex; align-items: center; gap: .6rem; }
+    .status::before {
+      content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%;
+      background: #fff; animation: pulse 2s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(255,255,255,.55); }
+      70%  { box-shadow: 0 0 0 10px rgba(255,255,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    }
+
+    .legal { border-top: 1px solid var(--line); color: var(--text-3); font-size: .78rem; padding: 1.25rem 0 1.5rem; }
+    .legal p { margin: 0; max-width: 900px; }
+    .legal p + p { margin-top: .5rem; }
+
+    @media (max-width: 900px) {
+      .content { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 820px) {
+      .top img { height: 24px; }
+      .media { flex: none; min-height: 0; aspect-ratio: 3 / 2; }
+      .board { grid-template-columns: repeat(2, 1fr); }
+      .board div { padding: .85rem 0; }
+      .board div + div { padding-left: 0; border-left: 0; }
+      .board div:nth-child(even) { padding-left: 1rem; border-left: 1px solid var(--line); }
+      .board div:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .board dd { font-size: 1.05rem; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: calc(100% - 2rem); }
+      .lead { font-size: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .btn { transition: none; }
+      .status::before { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="top wrap">
+      <img src="assets/img/logo-vcma.png" alt="vCMA — CMA CGM Air Cargo Virtual" width="122" height="30">
+    </header>
+
+    <main class="content wrap">
+      <div>
+        <p class="eyebrow">Final checks in progress</p>
+        <h1>Preparing <span>for departure.</span></h1>
+      </div>
+      <div>
+        <p class="lead">
+          We're loading the last pallets: network, procedures and crew briefings. The full website opens very soon,
+          with the CMA CGM AIR CARGO freighter network flown in the 777F and A330-200P2F and tracked on Newsky.
+        </p>
+        <div class="cta js-discord" hidden>
+          <a class="btn js-discord-link" href="#" target="_blank" rel="noopener">Join our Discord</a>
+        </div>
+      </div>
+    </main>
+
+    <figure class="media">
+      <img src="assets/img/maintenance.jpg" alt="CMA CGM AIR CARGO Boeing 777 Freighter landing in the mist" fetchpriority="high">
+      <figcaption class="credit">Photo © Czirok Bence</figcaption>
+    </figure>
+    <span class="liseret" aria-hidden="true"></span>
+
+    <dl class="board wrap">
+      <div><dt>Hub</dt><dd>LFPG Paris</dd></div>
+      <div><dt>Fleet</dt><dd>777F · A330P2F</dd></div>
+      <div><dt>Platform</dt><dd>Newsky</dd></div>
+      <div><dt>Status</dt><dd><span class="status">Opening soon</span></dd></div>
+    </dl>
+  </div>
+
+  <footer class="legal">
+    <div class="wrap">
+      <p>
+        CMA CGM Air Cargo Virtual is a non-profit flight simulation community. It is not affiliated with, endorsed by or
+        connected to CMA CGM, CMA CGM AIR CARGO or any company of the CMA CGM group. Not for real-world shipping.
+      </p>
+      <p>Photo © Czirok Bence on Flickr, all rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shows the Discord button as soon as discordUrl is filled in assets/js/config.js -->
+  <script src="assets/js/config.js"></script>
+  <script>
+    (function () {
+      var url = (window.VCMA_CONFIG || {}).discordUrl;
+      if (!url) return;
+      document.querySelector(".js-discord-link").href = url;
+      document.querySelector(".js-discord").hidden = false;
+    })();
+  </script>
+</body>
+</html>

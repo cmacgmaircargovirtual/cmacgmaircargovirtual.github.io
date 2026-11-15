@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMA CGM Air Cargo Virtual — 777F and A330 freighter virtual airline on Newsky</title>
+  <meta name="description" content="CMA CGM Air Cargo Virtual is a free cargo virtual airline on Newsky. Fly the CMA CGM AIR CARGO freighter network from Paris-Charles de Gaulle in the Boeing 777F and Airbus A330-200P2F. MSFS and X-Plane.">
+  <meta name="theme-color" content="#000000">
+  <!-- Full addresses below (canonical, Open Graph, structured data, robots.txt, sitemap.xml): update them all if the domain changes. -->
+  <link rel="canonical" href="https://cmacgmaircargovirtual.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cmacgmaircargovirtual.com/">
+  <meta property="og:site_name" content="CMA CGM Air Cargo Virtual">
+  <meta property="og:title" content="CMA CGM Air Cargo Virtual — Delivering at the highest level">
+  <meta property="og:description" content="The CMA CGM AIR CARGO freighter network, flown in the 777F and A330-200P2F and tracked on Newsky. Free to join.">
+  <meta property="og:image" content="https://cmacgmaircargovirtual.com/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CMA CGM AIR CARGO Boeing 777 Freighter seen head-on, above the CMA CGM Air Cargo Virtual logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://cmacgmaircargovirtual.com/assets/img/og-image.jpg">
+
+  <!-- Lets Google show the site name and logo in results. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "CMA CGM Air Cargo Virtual",
+        "alternateName": "vCMA",
+        "url": "https://cmacgmaircargovirtual.com/"
+      },
+      {
+        "@type": "Organization",
+        "name": "CMA CGM Air Cargo Virtual",
+        "alternateName": "vCMA",
+        "url": "https://cmacgmaircargovirtual.com/",
+        "logo": "https://cmacgmaircargovirtual.com/assets/img/apple-touch-icon.png",
+        "description": "Free cargo virtual airline on Newsky recreating the CMA CGM AIR CARGO freighter network from Paris-Charles de Gaulle. Not affiliated with CMA CGM."
+      }
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="CMA CGM Air Cargo Virtual home">
+        <img src="assets/img/logo-vcma.png" alt="vCMA — CMA CGM Air Cargo Virtual" width="98" height="24">
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav class="nav__links" id="nav-links" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#network">Network</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#live">Live ops</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--primary btn--sm" href="#join">Join the crew</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <picture class="hero__bg">
+        <source media="(max-width: 640px)" srcset="assets/img/hero-mobile.jpg">
+        <source media="(max-width: 1100px)" srcset="assets/img/hero-tablet.jpg">
+        <img src="assets/img/hero-desktop.jpg" alt="CMA CGM AIR CARGO Boeing 777 Freighter F-HMRF taking off from Paris-CDG" fetchpriority="high" width="2048" height="975">
+      </picture>
+      <span class="credit hero__credit">Photo © Daniel Lapierre</span>
+
+      <div class="wrap hero__content">
+        <p class="kicker"><span class="kicker__dot"></span>Cargo virtual airline · Newsky · Hub LFPG</p>
+        <h1 class="display">Delivering at the<br class="br-wide"> <span class="fade">highest level.</span></h1>
+        <div class="hero__row">
+          <p class="hero__lead">
+            The CMA&nbsp;CGM AIR&nbsp;CARGO freighter network from Paris-Charles de Gaulle, flown in the Boeing 777F and the
+            Airbus A330-200P2F and tracked live on Newsky. Free to join, on MSFS and X-Plane.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--primary btn--lg" href="#join">Join the crew <span aria-hidden="true">→</span></a>
+            <a class="btn btn--glass btn--lg" href="#network">Explore the network</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticker" aria-label="Rotations of the network">
+        <div class="ticker__track" id="ticker">
+          <span class="ticker__item">CDG → PVG → CDG<em>3× weekly</em></span>
+          <span class="ticker__item">CDG → HKG → CDG<em>4× weekly</em></span>
+          <span class="ticker__item">LGG → CGO → LGG<em>2× weekly</em></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <header class="head" data-reveal>
+          <p class="index"><span>01</span>About</p>
+          <h2 class="h-xl">Long-haul freight, <span class="fade">the French way.</span></h2>
+          <p class="head__lead">
+            CMA CGM AIR CARGO is the air freight arm of the CMA CGM group, based at Paris-Charles de Gaulle.
+            Its widebody freighters link Europe with the factories of Asia and the markets of the Americas.
+            We fly that network in the simulator, rotation by rotation.
+          </p>
+        </header>
+
+        <div class="bento">
+          <figure class="card card--photo b-photo" data-reveal>
+            <img src="assets/img/about-fleet.jpg" alt="CMA CGM AIR CARGO Boeing 777 Freighter F-HMRB seen head-on on the runway" loading="lazy" width="1600" height="1072">
+            <figcaption>
+              <span class="mono-label">LFPG · Paris-CDG</span>
+              <strong>Home of the fleet.</strong>
+            </figcaption>
+            <span class="credit">Photo © Enzo Cattania</span>
+          </figure>
+
+          <div class="card stat" data-reveal>
+            <span class="mono-label">Network</span>
+            <strong class="stat__value" data-stat="rotations">15</strong>
+            <p>rotations from the CMA CGM AIR CARGO network brochure.</p>
+          </div>
+          <div class="card stat" data-reveal>
+            <span class="mono-label">Every week</span>
+            <strong class="stat__value" data-stat="weekly">32</strong>
+            <p>rotations on the schedule, from weekly to 4× a week.</p>
+          </div>
+          <div class="card stat" data-reveal>
+            <span class="mono-label">Airports</span>
+            <strong class="stat__value" data-stat="airports">17</strong>
+            <p>on three continents: Europe, Asia and the Americas.</p>
+          </div>
+          <div class="card stat" data-reveal>
+            <span class="mono-label">Longest leg</span>
+            <strong class="stat__value">15<small>h+</small></strong>
+            <p>Shanghai to Mexico City, across the Pacific.</p>
+          </div>
+
+          <article class="card feature" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
+            </div>
+            <h3>A real freight network</h3>
+            <p>Paris to Shanghai, Hong Kong, Hanoi and Campinas; Brussels, Liège and Madrid to China; a transpacific operation out of Chicago.</p>
+          </article>
+          <article class="card feature" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
+            </div>
+            <h3>Pallets, not passengers</h3>
+            <p>The 777F lifts up to 102 tonnes, the A330-200P2F covers the mid-size flows. Main-deck freighters only.</p>
+          </article>
+          <article class="card feature" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>
+            </div>
+            <h3>Long haul, multi-leg</h3>
+            <p>Legs from 1&frac12; to more than 15 hours, and rotations that chain three sectors. Plan fuel, payload and rest.</p>
+          </article>
+          <article class="card feature" data-reveal>
+            <div class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v11H4zM8 20h8M12 16v4"/></svg>
+            </div>
+            <h3>Tracked automatically</h3>
+            <p>Newsky's free app logs the flight, files the PIREP and rates it. Every load earns revenue in a shared economy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NETWORK -->
+    <section class="section section--alt" id="network">
+      <div class="wrap">
+        <header class="head" data-reveal>
+          <p class="index"><span>02</span>Route network</p>
+          <h2 class="h-xl">From Paris <span class="fade">to three continents.</span></h2>
+          <p class="head__lead">
+            The CMA CGM AIR CARGO network, coloured by who flies each rotation in the real world: CMA CGM AIR CARGO itself,
+            Air Belgium for the CMA CGM group, and Atlas Air on its behalf across the Pacific. In the sim, every one of them is yours.
+          </p>
+        </header>
+
+        <div class="card netmap" data-reveal>
+          <div class="netmap__stage" id="netmap">
+            <canvas aria-hidden="true"></canvas>
+            <div class="netmap__filters" role="group" aria-label="Show the rotations of one operator">
+              <button class="seg is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="seg" type="button" data-filter="cma" aria-pressed="false"><i class="op op--cma"></i><span>CMA CGM<span class="seg__long"> AIR CARGO</span></span></button>
+              <button class="seg" type="button" data-filter="bel" aria-pressed="false"><i class="op op--bel"></i>Air Belgium</button>
+              <button class="seg" type="button" data-filter="atlas" aria-pressed="false"><i class="op op--atlas"></i>Atlas Air</button>
+            </div>
+            <div class="netmap__zoom">
+              <button type="button" data-zoom="in" aria-label="Zoom in"><svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></button>
+              <button type="button" data-zoom="out" aria-label="Zoom out"><svg viewBox="0 0 16 16"><path d="M3 8h10"/></svg></button>
+              <button type="button" data-zoom="fit" aria-label="Show the whole selection"><svg viewBox="0 0 16 16"><path d="M2.5 6V2.5H6M10 2.5h3.5V6M13.5 10v3.5H10M6 13.5H2.5V10"/></svg></button>
+            </div>
+            <p class="netmap__status mono-label" id="map-status" aria-live="polite"></p>
+            <div class="netmap__tip" id="map-tip" hidden></div>
+          </div>
+
+          <aside class="netmap__panel" aria-label="Rotations">
+            <div class="route-browser" id="route-browser">
+              <div class="panel__head"><span class="mono-label">Rotations</span><strong id="route-count">15</strong></div>
+              <div class="route-groups" id="route-list"></div>
+            </div>
+
+            <div class="route-detail" id="route-detail" hidden>
+              <button class="route-detail__back" type="button" id="rd-back"><span aria-hidden="true">←</span> All rotations</button>
+              <p class="op-badge" id="rd-op"></p>
+              <h3 id="rd-title"></h3>
+              <p class="mono-label" id="rd-codes"></p>
+              <dl class="route-detail__facts">
+                <div><dt class="mono-label">Distance</dt><dd id="rd-dist"></dd></div>
+                <div><dt class="mono-label">Est. block</dt><dd id="rd-block"></dd></div>
+                <div><dt class="mono-label">Frequency</dt><dd id="rd-freq"></dd></div>
+              </dl>
+              <ol class="legs" id="rd-legs"></ol>
+              <p class="fine">Great-circle distances. Block times are estimates for a widebody freighter (470&nbsp;kt plus taxi and approach). Flight numbers are published as soon as they are confirmed.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLEET -->
+    <section class="section" id="fleet">
+      <div class="wrap">
+        <header class="head" data-reveal>
+          <p class="index"><span>03</span>Fleet</p>
+          <h2 class="h-xl">Two freighters. <span class="fade">One standard.</span></h2>
+          <p class="head__lead">Main-deck freighters only. Load the pallets, check the weights, fly the line.</p>
+        </header>
+
+        <div class="fleet">
+          <article class="card aircraft" data-reveal>
+            <figure class="aircraft__media">
+              <img src="assets/img/fleet-777f.jpg" alt="CMA CGM AIR CARGO Boeing 777 Freighter on short final, gear down" loading="lazy" width="1400" height="933">
+              <span class="credit">Photo © Andrew Simpson</span>
+            </figure>
+            <div class="aircraft__body">
+              <div class="aircraft__title">
+                <h3 class="aircraft__name">777F</h3>
+                <p><span class="mono-label">Boeing · Newsky B77L</span>The flagship</p>
+              </div>
+              <p class="aircraft__text">The largest twin-engine freighter flying, built for the long sectors to Asia and across the Pacific.</p>
+              <dl class="specs">
+                <div><dt>Max payload</dt><dd>102 t</dd></div>
+                <div><dt>Range, max payload</dt><dd>≈ 4,900 nm</dd></div>
+                <div><dt>Main deck</dt><dd>27 pallets</dd></div>
+                <div><dt>Length · span</dt><dd>63.7 · 64.8 m</dd></div>
+                <div><dt>Engines</dt><dd>2 × GE90-110B1</dd></div>
+                <div><dt>Newsky airframe</dt><dd>B77L</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="card aircraft" data-reveal>
+            <figure class="aircraft__media">
+              <img src="assets/img/fleet-a330.jpg" alt="CMA CGM AIR CARGO Airbus A330 freighter in flight, gear down" loading="lazy" width="1400" height="933">
+              <span class="credit">Photo © Black Labrador13</span>
+            </figure>
+            <div class="aircraft__body">
+              <div class="aircraft__title">
+                <h3 class="aircraft__name">A330</h3>
+                <p><span class="mono-label">Airbus · Newsky A332</span>A330-200P2F</p>
+              </div>
+              <p class="aircraft__text">A passenger A330-200 converted to a full freighter. Flexible and efficient on the mid-size flows and the regional legs.</p>
+              <dl class="specs">
+                <div><dt>Max payload</dt><dd>up to 61 t</dd></div>
+                <div><dt>Conversion</dt><dd>P2F, side door</dd></div>
+                <div><dt>Length · span</dt><dd>58.8 · 60.3 m</dd></div>
+                <div><dt>Engines</dt><dd>Trent 700 · PW4000 · CF6</dd></div>
+                <div><dt>Newsky airframe</dt><dd>A332</dd></div>
+                <div><dt>Simulators</dt><dd>MSFS · X-Plane</dd></div>
+              </dl>
+            </div>
+          </article>
+        </div>
+        <p class="fine">Typical manufacturer figures. In the simulator, the limits of your aircraft and Newsky's payload and landing checks apply: keep ZFW, TOW and LW inside them or the flight is penalised. MSFS 2020, MSFS 2024, X-Plane 11 and 12.</p>
+      </div>
+    </section>
+
+    <!-- LIVE -->
+    <section class="section section--alt" id="live">
+      <div class="wrap">
+        <header class="head" data-reveal>
+          <p class="index"><span>04</span>Live operations</p>
+          <h2 class="h-xl">Who's flying <span class="fade">right now.</span></h2>
+          <p class="head__lead">Our flights are tracked live by Newsky. Figures below update automatically every hour.</p>
+        </header>
+
+        <div class="live" data-reveal>
+          <div class="card live__map" id="live-map">
+            <div class="placeholder">
+              <span class="pulse" aria-hidden="true"></span>
+              <p><strong>Live map coming soon.</strong></p>
+              <p>Flights in progress will appear here as soon as our first crews are in the air.</p>
+            </div>
+          </div>
+          <div class="live__side">
+            <div class="tiles">
+              <div class="card tile"><span class="mono-label">Flights</span><strong class="tile__value" id="st-flights">0</strong></div>
+              <div class="card tile"><span class="mono-label">Block hours</span><strong class="tile__value" id="st-hours">0</strong></div>
+              <div class="card tile"><span class="mono-label">Pilots</span><strong class="tile__value" id="st-pilots">0</strong></div>
+              <div class="card tile"><span class="mono-label">Avg. rating</span><strong class="tile__value" id="st-rating">–</strong></div>
+              <div class="card tile tile--wide" id="st-cargo-tile" hidden><span class="mono-label">Cargo delivered</span><strong class="tile__value" id="st-cargo">0</strong></div>
+            </div>
+            <p class="fine" id="st-updated"></p>
+            <div class="card live__cta">
+              <p><strong>Want your name on this board?</strong> Every flight you log with CMA CGM Air Cargo Virtual shows up here automatically.</p>
+              <a class="btn btn--primary btn--sm" href="#join">Join the crew <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="boards" data-reveal>
+          <div class="card board">
+            <h3>Latest PIREPs</h3>
+            <div class="table-wrap">
+              <table class="pireps">
+                <thead><tr><th scope="col">Flight</th><th scope="col">Route</th><th scope="col">Pilot</th><th scope="col">Aircraft</th><th scope="col">Block</th><th scope="col">Rating</th><th scope="col">Date</th></tr></thead>
+                <tbody id="pirep-rows"></tbody>
+              </table>
+            </div>
+            <p class="empty" id="pirep-empty">No flights logged yet. The first PIREP on this board could be yours.</p>
+          </div>
+          <div class="card board">
+            <h3>Top pilots <small>last 30 days</small></h3>
+            <ol class="leaders" id="leaders"></ol>
+            <p class="empty" id="leaders-empty">The leaderboard opens with the first flights.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN -->
+    <section class="section join" id="join">
+      <div class="join__bg" aria-hidden="true">
+        <img src="assets/img/join.jpg" alt="" loading="lazy" width="1880" height="1253">
+      </div>
+      <span class="credit">Photo © Czirok Bence</span>
+      <div class="wrap">
+        <header class="head" data-reveal>
+          <p class="index"><span>05</span>Join the crew</p>
+          <h2 class="h-xl">Four steps <span class="fade">to your first departure.</span></h2>
+        </header>
+        <ol class="steps">
+          <li class="card step" data-reveal>
+            <span class="step__n">01</span>
+            <h3>Create a Newsky account</h3>
+            <p>Newsky is free. Sign up with your email and confirm it.</p>
+            <a class="link" href="https://newsky.app/pilot/register" target="_blank" rel="noopener">newsky.app/pilot/register</a>
+          </li>
+          <li class="card step" data-reveal>
+            <span class="step__n">02</span>
+            <h3>Install the Newsky app</h3>
+            <p>The Windows app connects to MSFS or X-Plane and records your flight. Nothing else to install.</p>
+            <a class="link" href="https://newsky.app/home" target="_blank" rel="noopener">Download the app</a>
+          </li>
+          <li class="card step" data-reveal>
+            <span class="step__n">03</span>
+            <h3>Apply to the airline</h3>
+            <p>Send your application to CMA CGM Air Cargo Virtual on Newsky. A staff member approves it.</p>
+            <a class="link js-join-direct" href="https://newsky.app/pilot/register" target="_blank" rel="noopener">Apply on Newsky</a>
+          </li>
+          <li class="card step" data-reveal>
+            <span class="step__n">04</span>
+            <h3>Load up and fly</h3>
+            <p>Pick a scheduled flight in the app. A good first leg before the long hauls: Seoul to Wuxi, about 1&nbsp;h&nbsp;35.</p>
+            <a class="link js-discord" href="#" target="_blank" rel="noopener" hidden>Say hello on Discord</a>
+          </li>
+        </ol>
+        <div class="join__cta" data-reveal>
+          <a class="btn btn--primary btn--lg js-join-direct" href="https://newsky.app/pilot/register" target="_blank" rel="noopener">Apply on Newsky <span aria-hidden="true">→</span></a>
+          <a class="btn btn--glass btn--lg js-discord" href="#" target="_blank" rel="noopener" hidden>Join our Discord</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt" id="faq">
+      <div class="wrap faq-layout">
+        <header class="head faq-layout__head" data-reveal>
+          <p class="index"><span>06</span>FAQ</p>
+          <h2 class="h-xl">Before you <span class="fade">close the doors.</span></h2>
+          <p class="head__lead">Anything else? Ask the crew on Discord.</p>
+        </header>
+        <div class="faq" data-reveal>
+          <details>
+            <summary>Is it really free?</summary>
+            <p>Yes. CMA CGM Air Cargo Virtual is a non-profit hobby project and Newsky is free to use.</p>
+          </details>
+          <details>
+            <summary>Which simulators can I use?</summary>
+            <p>Microsoft Flight Simulator 2020 and 2024, X-Plane 11 and 12. The Newsky app runs on Windows.</p>
+          </details>
+          <details>
+            <summary>Which aircraft do I need?</summary>
+            <p>A Boeing 777 Freighter that Newsky recognises as a B77L, or an Airbus A330-200 freighter recognised as an A332. Payware or freeware, as long as Newsky detects it.</p>
+          </details>
+          <details>
+            <summary>Do I have to fly the 15-hour sectors?</summary>
+            <p>No. Every leg is a flight of its own. Start with the short Asian legs, such as Seoul to Wuxi or Zhengzhou, and move on to the long hauls when you are ready.</p>
+          </details>
+          <details>
+            <summary>Where do the routes and flight numbers come from?</summary>
+            <p>From the network published by CMA CGM AIR CARGO. Not every flight number is confirmed yet: they are added as we go and show as TBA until then.</p>
+          </details>
+          <details>
+            <summary>Do I have to fly on VATSIM or IVAO?</summary>
+            <p>No. Online networks are welcome but never required.</p>
+          </details>
+          <details>
+            <summary>What happens if my simulator crashes mid-flight?</summary>
+            <p>Newsky detects interrupted flights. Let a staff member know on Discord and we'll sort it out.</p>
+          </details>
+          <details>
+            <summary>Are you the real CMA CGM AIR CARGO?</summary>
+            <p>No. CMA CGM Air Cargo Virtual is a flight simulation community. We are not affiliated with the CMA CGM group, and nothing on this site is a real flight, a real booking or a real shipment.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <p class="footer__tagline">A cargo virtual airline on <a href="https://newsky.app" target="_blank" rel="noopener">Newsky</a>.<br>Delivering at the highest level.</p>
+        <nav class="footer__links" aria-label="Footer">
+          <a href="#about">About</a>
+          <a href="#network">Network</a>
+          <a href="#fleet">Fleet</a>
+          <a href="#live">Live ops</a>
+          <a href="#join">Join</a>
+          <a class="js-discord" href="#" target="_blank" rel="noopener" hidden>Discord</a>
+          <a class="js-contact" href="#" hidden>Contact</a>
+        </nav>
+      </div>
+      <img class="footer__wordmark" src="assets/img/logo-wordmark.png" alt="CMA CGM Air Cargo Virtual" width="1000" height="89" loading="lazy">
+      <div class="footer__legal">
+        <p>
+          CMA CGM Air Cargo Virtual is a non-profit flight simulation community. It is not affiliated with, endorsed by or
+          connected to CMA CGM, CMA CGM AIR CARGO or any company of the CMA CGM group. The CMA CGM name, logo and aircraft
+          imagery belong to their respective owners and are used here for simulation purposes only. Not for real-world shipping.
+        </p>
+        <p>
+          Photos © Daniel Lapierre, Enzo Cattania, Andrew Simpson, Black Labrador13 and Czirok Bence on Flickr.
+          All rights reserved by their authors. Map: Natural Earth.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

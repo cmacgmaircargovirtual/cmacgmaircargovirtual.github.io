@@ -1,0 +1,81 @@
+# CMA CGM Air Cargo Virtual - network, transcribed from A4_BROCHURE_CCAC.pdf ("Cargo flights").
+# Edit this file when the network changes or a flight number becomes known, then run:
+#     python scripts/build_routes.py
+#
+# ROTATION <flights per week> <operator>
+#     operator = who flies the rotation in the real world (colour of the line in the brochure map):
+#       cma   = CMA CGM AIR CARGO, its own aircraft and crews (blue)
+#       bel   = Air Belgium, part of the CMA CGM group since 2025, from Brussels and Liege (red)
+#       atlas = Atlas Air on behalf of CMA CGM AIR CARGO, the transpacific 777Fs (green)
+#     Madrid - Urumqi is not on the brochure map: CMA CGM AIR CARGO opened it in July 2025 with its A330F.
+# LEG <from ICAO> <to ICAO> <flight number>
+#     Legs are flown in the order listed. Flight number = digits only (e.g. 1234), or "-" while it is unknown.
+# A new airport must also be added to data-src/airports.json.
+
+# ---------- CMA CGM AIR CARGO ----------
+ROTATION 2 cma
+LEG VHHH LFPG -
+LEG LFPG SBKP -
+
+ROTATION 3 cma
+LEG LFPG ZSPD -
+LEG ZSPD LFPG -
+
+ROTATION 4 cma
+LEG LFPG VHHH -
+LEG VHHH LFPG -
+
+ROTATION 2 cma
+LEG LFPG VVNB -
+LEG VVNB LFPG -
+
+ROTATION 2 cma
+LEG LFPG ZLXY -
+LEG ZLXY LFPG -
+
+ROTATION 1 cma
+LEG LFPG ZWWW -
+LEG ZWWW LFPG -
+
+ROTATION 4 cma
+LEG LEMD ZWWW -
+LEG ZWWW LEMD -
+
+# ---------- Air Belgium (CMA CGM group) ----------
+ROTATION 1 bel
+LEG EBLG ZHCC -
+LEG ZHCC EBLG -
+
+ROTATION 4 bel
+LEG EBBR ZUUU -
+LEG ZUUU EBBR -
+
+ROTATION 2 bel
+LEG EBBR ZHCC -
+LEG ZHCC EBBR -
+
+# ---------- Atlas Air on behalf of CMA CGM AIR CARGO ----------
+ROTATION 3 atlas
+LEG KORD RKSI -
+LEG RKSI VVNB -
+LEG VVNB KORD -
+
+ROTATION 1 atlas
+LEG KORD RKSI -
+LEG RKSI ZSWX -
+LEG ZSWX KORD -
+
+ROTATION 1 atlas
+LEG KORD ZSPD -
+LEG ZSPD MMSM -
+LEG MMSM KLAX -
+
+ROTATION 1 atlas
+LEG KORD RKSI -
+LEG RKSI ZHCC -
+LEG ZHCC KORD -
+
+ROTATION 1 atlas
+LEG KLAX RKSI -
+LEG RKSI ZSWX -
+LEG ZSWX KORD -

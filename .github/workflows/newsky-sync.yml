@@ -1,0 +1,85 @@
+# Hourly: pull flights from the Newsky API, update site/data/stats.json, publish the site on GitHub Pages.
+# Needs the repository secret NEWSKY_API_KEY (Newsky API key with the "flights" scope).
+name: Newsky sync & deploy
+
+on:
+  schedule:
+    - cron: "7 * * * *"   # every hour at minute 7 (UTC)
+  workflow_dispatch:       # "Run workflow" button in the Actions tab
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: newsky-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.sync.outputs.changed }}
+    steps:
+      # Always the latest version of main, even when an old run is re-run:
+      # an old commit would publish an old site and could not push the new stats.
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Sync flights from Newsky
+        id: sync
+        env:
+          NEWSKY_API_KEY: ${{ secrets.NEWSKY_API_KEY }}
+        run: node scripts/fetch-newsky.mjs
+
+      - name: Commit updated data
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data-cache site/data/stats.json
+          git diff --staged --quiet && exit 0
+          git commit -m "Update Newsky stats"
+          # A file may have been changed on GitHub while this run was working:
+          # put the stats commit on top of the latest main, then push.
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            sleep 10
+          done
+          echo "::error title=Stats not saved::Could not push the updated stats to main after 3 attempts."
+          exit 1
+
+      # Maintenance mode: repository variable MAINTENANCE_MODE = "on"
+      # (Settings > Secrets and variables > Actions > Variables).
+      # The published home page becomes site/maintenance.html; the files in the repository are not changed.
+      # Must stay after "Commit updated data": that step rebases, which needs a clean working tree.
+      - name: Maintenance mode
+        if: vars.MAINTENANCE_MODE == 'on'
+        run: cp site/maintenance.html site/index.html
+
+      - uses: actions/configure-pages@v6
+        if: steps.sync.outputs.changed == 'true' || github.event_name != 'schedule'
+
+      - uses: actions/upload-pages-artifact@v5
+        if: steps.sync.outputs.changed == 'true' || github.event_name != 'schedule'
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.changed == 'true' || github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

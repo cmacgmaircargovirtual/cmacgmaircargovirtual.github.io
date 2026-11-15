@@ -9,7 +9,7 @@ window.VCMA_CONFIG = {
 
   // API key created in Newsky > Airline management > General, with ONLY the "map" scope.
   // It is visible in the page source, so never use a key that has the "flights" scope here.
-  newskyMapToken: "",
+  newskyMapToken: "CMA_md08M5O6optKHPdlLmFOh9crOV5d3n",
 
   // Shown in front of the flight numbers of the network table, e.g. "CMA" gives "CMA 1234".
   // Use the code the airline has on Newsky. Empty = digits only.

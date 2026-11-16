@@ -9,7 +9,9 @@ Sources (project folder)
   CMA CGM Air Cargo Virtual - Black.png    white "CMA CGM AIR CARGO VIRTUAL" on black
 
   Photos/ (Flickr, JetPhotos, Planespotters.net and Spot Youz, all rights reserved: credit the
-           photographers, see PHOTOS_USED below; their signatures stay on the photos)
+           photographers, see PHOTOS_USED below; their signatures stay on the photos.
+           Exception: the maintenance photo comes from Wikimedia Commons under CC BY-SA 2.0, which
+           requires the credit, a link to the licence and a note of the changes, all shown on the page)
 """
 from pathlib import Path
 
@@ -31,14 +33,17 @@ PHOTOS_USED = {
     "53569468759": ("Enzo Cattania", "777F F-HMRB, head-on"),                 # about, Open Graph
     "55451424799": ("Andrew Simpson", "777F N761GT, Anchorage"),              # fleet 777F
     "51843021548": ("Black Labrador13", "A330F OO-SEA, Brussels"),            # fleet A330
-    "52448401251": ("Czirok Bence", "777F F-HMRF landing in the mist"),       # join, maintenance page
+    "52448401251": ("Czirok Bence", "777F F-HMRF landing in the mist"),       # join
+    "53323769502": ("Colin Cooke Photo", "A330-200F F-HMRG taking off, London Stansted"),  # maintenance page, CC BY-SA 2.0
 }
 
 
 def photo(photo_id: str) -> Image.Image:
     """Flickr and JetPhotos files start with their id; Planespotters files have it in the middle
-    (registration-airline-type_PlanespottersNet_<id>_<hash>_o.jpg)."""
-    found = sorted(PHOTOS.glob(f"{photo_id}_*.jpg")) or sorted(PHOTOS.glob(f"*_{photo_id}_*.jpg"))
+    (registration-airline-type_PlanespottersNet_<id>_<hash>_o.jpg); Wikimedia Commons copies of Flickr
+    photos end with it in brackets (Title_words_(<id>).jpg)."""
+    found = (sorted(PHOTOS.glob(f"{photo_id}_*.jpg")) or sorted(PHOTOS.glob(f"*_{photo_id}_*.jpg"))
+             or sorted(PHOTOS.glob(f"*({photo_id}).jpg")))
     return Image.open(found[0]).convert("RGB")
 
 
@@ -143,11 +148,15 @@ save_jpg(head_on, "about-fleet.jpg", 1600, quality=80)
 save_jpg(crop_ratio(photo("55451424799"), 1.5, cy=0.5), "fleet-777f.jpg", 1400, quality=80)
 save_jpg(crop_ratio(photo("51843021548"), 1.5, cy=0.5), "fleet-a330.jpg", 1400, quality=80)
 
-# Join background and maintenance page: the 777F F-HMRF landing in the mist, by Czirok Bence.
+# Join background: the 777F F-HMRF landing in the mist, by Czirok Bence.
 # Full width of the file (1880 px): the section spans the whole screen.
 mist = photo("52448401251")
 save_jpg(mist, "join.jpg", 1880, quality=76)
-save_jpg(mist, "maintenance.jpg", 1800, quality=78)
+
+# Maintenance page: the A330-200F F-HMRG taking off from Stansted at sunset, by Colin Cooke Photo (CC BY-SA 2.0).
+# Whole 3:2 frame, only resized: the page shows a full-width band of it, and the aircraft (tail top 38 %,
+# main gear 75 % of the height, 2 % to 97 % of the width) stays whole at every screen shape.
+save_jpg(photo("53323769502"), "maintenance.jpg", 2400, quality=78)
 
 # 4. Open Graph / Discord preview card, 1200 x 630 ------------------------------------------
 og_w, og_h, band = 1200, 630, 170

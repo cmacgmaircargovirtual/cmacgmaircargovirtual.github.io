@@ -15,7 +15,7 @@ Sources (project folder)
 """
 from pathlib import Path
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 PHOTOS = ROOT / "Photos"
@@ -156,18 +156,32 @@ save_jpg(mist, "join.jpg", 1880, quality=76)
 # Maintenance page: the A330-200F F-HMRG taking off from Stansted at sunset, by Colin Cooke Photo (CC BY-SA 2.0).
 # Whole 3:2 frame, only resized: the page shows a full-width band of it, and the aircraft (tail top 38 %,
 # main gear 75 % of the height, 2 % to 97 % of the width) stays whole at every screen shape.
-save_jpg(photo("53323769502"), "maintenance.jpg", 2400, quality=78)
+sunset = photo("53323769502")
+save_jpg(sunset, "maintenance.jpg", 2400, quality=78)
 
-# 4. Open Graph / Discord preview card, 1200 x 630 ------------------------------------------
-og_w, og_h, band = 1200, 630, 170
-og = Image.new("RGBA", (og_w, og_h), (*BLACK, 255))
-pic = crop_ratio(head_on, og_w / (og_h - band + 40), cy=0.55).resize((og_w, og_h - band + 40), Image.LANCZOS)
-og.alpha_composite(fade_to_black(pic, top=0.12, bottom=0.3), (0, 0))
-logo = wordmark.copy()
-logo.thumbnail((640, 640), Image.LANCZOS)
-og.alpha_composite(logo, ((og_w - logo.width) // 2, og_h - band // 2 - logo.height // 2 - 4))
-tricolour(ImageDraw.Draw(og), (0, og_h - 6, og_w, og_h))
-og.convert("RGB").save(OUT / "og-image.jpg", "JPEG", quality=85, optimize=True, progressive=True)
+# 4. Open Graph / Discord preview cards, 1200 x 630 -----------------------------------------
+# The photo fades into a black band holding the wordmark, over the tricolour line.
+def og_card(pic: Image.Image, cy: float, name: str, credit: str = "") -> None:
+    og_w, og_h, band = 1200, 630, 170
+    og = Image.new("RGBA", (og_w, og_h), (*BLACK, 255))
+    pic = crop_ratio(pic, og_w / (og_h - band + 40), cy=cy).resize((og_w, og_h - band + 40), Image.LANCZOS)
+    og.alpha_composite(fade_to_black(pic, top=0.12, bottom=0.3), (0, 0))
+    logo = wordmark.copy()
+    logo.thumbnail((640, 640), Image.LANCZOS)
+    og.alpha_composite(logo, ((og_w - logo.width) // 2, og_h - band // 2 - logo.height // 2 - 4))
+    draw = ImageDraw.Draw(og)
+    if credit:  # bottom right of the band, under the wordmark
+        draw.text((og_w - 24, og_h - 20), credit, font=ImageFont.load_default(size=15),
+                  fill=(150, 150, 150, 255), anchor="rb")
+    tricolour(draw, (0, og_h - 6, og_w, og_h))
+    og.convert("RGB").save(OUT / name, "JPEG", quality=85, optimize=True, progressive=True)
+
+
+# Main site: the 777F head-on.
+og_card(head_on, 0.55, "og-image.jpg")
+# Maintenance page (what Discord and the social networks show while it is online): the A330F at
+# Stansted, whole aircraft, tail clear of the top fade. CC BY-SA 2.0 asks for the credit on the card.
+og_card(sunset, 0.6, "og-maintenance.jpg", "Photo © Colin Cooke · CC BY-SA 2.0")
 
 # 5. Old files no longer used ---------------------------------------------------------------
 for old in ("ramp-night.jpg", "ramp-tails.jpg", "hero-1900.jpg", "hero-1200.jpg",
